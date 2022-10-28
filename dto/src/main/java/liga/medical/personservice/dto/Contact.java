@@ -1,22 +1,26 @@
-package liga.medical.personservice.core.model;
+package liga.medical.personservice.dto;
 
-import lombok.Data;
+import lombok.*;
 import org.springframework.data.annotation.Id;
-import org.springframework.data.relational.core.mapping.MappedCollection;
+// import org.springframework.data.relational.core.mapping.MappedCollection;
 import org.springframework.data.relational.core.mapping.Table;
 
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
 @Table("contact")
 public class Contact {
 
-  @Id
-  private long id;
+    @Id
+    @NonNull
+    private long id;
 
-  private String phoneNumber;
+    @NonNull
+    private String phoneNumber;
 
-  private String email;
+    private String email;
 
-  private String profileLink;
+    private String profileLink;
 
 //  @MappedCollection(idColumn = "contact_id")
 //  private Address address;
