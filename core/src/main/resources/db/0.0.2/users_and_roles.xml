@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.6.xsd">
+    <changeSet id="2" author="RichRaccoon">
+        <createTable tableName="users">
+            <column name="id" autoIncrement="true" type="bigserial">
+                <constraints nullable="false" unique="true" primaryKey="true"/>
+            </column>
+            <column name="username" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="password" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+
+        <createTable tableName="roles">
+            <column name="id" autoIncrement="true" type="bigserial">
+                <constraints nullable="false" unique="true" primaryKey="true"/>
+            </column>
+            <column name="name" type="varchar(32)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+
+        <createTable tableName="users_roles">
+            <column name="user_id" type="bigserial">
+                <constraints nullable="false" foreignKeyName="fk_usersroles_user" references="users(id)"/>
+            </column>
+            <column name="role_id" type="bigserial">
+                <constraints nullable="false" foreignKeyName="fk_usersroles_role" references="roles(id)"/>
+            </column>
+        </createTable>
+    </changeSet>
+</databaseChangeLog>

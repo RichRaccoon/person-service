@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import java.util.List;
 
 @RestController
-@RequestMapping("/medicalCards")
+@RequestMapping("/ps/medicalCards")
 public class MedicalCardController {
     private final MedicalCardService medicalCardService;
 

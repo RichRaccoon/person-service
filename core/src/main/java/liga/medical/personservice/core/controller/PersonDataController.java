@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import java.util.List;
 
 @RestController
-@RequestMapping("/personData")
+@RequestMapping("/ps/personData")
 public class PersonDataController {
     private final PersonDataService personDataService;
 
