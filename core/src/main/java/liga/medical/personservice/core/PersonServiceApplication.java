@@ -9,7 +9,7 @@ import org.springframework.context.annotation.ComponentScan;
  * Service application.
  */
 @SpringBootApplication(exclude = HibernateJpaAutoConfiguration.class)
-@ComponentScan(basePackages = "liga.medical.personservice")
+@ComponentScan(basePackages = {"liga.medical.personservice", "liga.medical.common"})
 public class PersonServiceApplication {
 
     /**
